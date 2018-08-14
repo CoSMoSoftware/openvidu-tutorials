@@ -40,7 +40,8 @@ nav i.fa:hover {
 }
 
 #main-container {
-	padding-bottom: 80px;
+	padding-bottom: 0px;
+	width: 1980px;
 }
 
 .vertical-center {
@@ -216,7 +217,7 @@ a:hover .demo-logo {
 }
 
 #session-header {
-	margin-bottom: 20px;
+	text-align: center;
 }
 
 #session-header form {
@@ -225,6 +226,7 @@ a:hover .demo-logo {
 
 #session-title {
 	display: inline-block;
+	margin-top: 10px;
 }
 
 #buttonLeaveSession {
@@ -232,18 +234,28 @@ a:hover .demo-logo {
 	margin-top: 20px;
 }
 
+#video-container {
+	position: absolute;
+  	top: 60px;
+	width: 100%;
+  	padding: 0px;
+}
+
 #video-container video {
 	position: relative;
 	float: left;
-	width: 50%;
+	width: 540px;
+	height: 360px;
 	cursor: pointer;
+	margin: 15px;
 }
 
 #video-container div {
 	float: left;
-	width: 50%;
+	width: 540px;
 	position: relative;
-	margin-left: -50%;
+	margin-top: -10px;
+	margin-left: -555px;
 }
 
 #video-container p {

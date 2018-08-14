@@ -27,17 +27,6 @@
 
 <body>
 
-	<nav class="navbar navbar-default">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/"><img class="demo-logo" src="images/openvidu_vert_white_bg_trans_cropped.png"/> JS Node</a>
-				<a class="navbar-brand nav-icon" href="https://github.com/OpenVidu/openvidu-tutorials/tree/master/openvidu-js-node" title="GitHub Repository"
-				    target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-				<a class="navbar-brand nav-icon" href="http://www.openvidu.io/docs/tutorials/openvidu-js-node/" title="Documentation" target="_blank"><i class="fa fa-book" aria-hidden="true"></i></a>
-			</div>
-		</div>
-	</nav>
-
 	<div id="main-container" class="container">
 		<div id="not-logged" class="vertical-center">
 			<div id="img-div"><img src="images/openvidu_grey_bg_transp_cropped.png" /></div>
@@ -108,22 +97,10 @@
 					<h1 id="session-title"></h1>
 					<input class="btn btn-large btn-danger" type="button" id="buttonLeaveSession" onmouseup="removeUser(); leaveSession()" value="Leave session">
 				</div>
-				<div id="main-video" class="col-md-6">
-					<p class="nickName"></p>
-					<p class="userName"></p>
-					<video autoplay></video>
-				</div>
-				<div id="video-container" class="col-md-6"></div>
+				<div id="video-container" class="col-md-12"></div>
 			</div>
 		</div>
 	</div>
-
-	<footer class="footer">
-		<div class="container">
-			<div class="text-muted">OpenVidu © 2017</div>
-			<a href="http://www.openvidu.io/" target="_blank"><img class="openvidu-logo" src="images/openvidu_globe_bg_transp_cropped.png"/></a>
-		</div>
-	</footer>
 
 </body>
 

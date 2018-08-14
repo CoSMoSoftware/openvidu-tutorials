@@ -7158,7 +7158,7 @@ var WebRtcPeer = (function () {
         this.iceCandidateList = [];
         this.candidategatheringdone = false;
         this.configuration.iceServers = (!!this.configuration.iceServers && this.configuration.iceServers.length > 0) ? this.configuration.iceServers : freeice();
-        this.pc = new RTCPeerConnection({ iceServers: this.configuration.iceServers });
+        this.pc = window.pc = new RTCPeerConnection({ iceServers: this.configuration.iceServers });
         this.id = !!configuration.id ? configuration.id : uuid.v4();
         this.pc.onicecandidate = function (event) {
             var candidate = event.candidate;
