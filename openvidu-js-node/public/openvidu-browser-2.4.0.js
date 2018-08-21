@@ -7158,7 +7158,19 @@ var WebRtcPeer = (function () {
         this.iceCandidateList = [];
         this.candidategatheringdone = false;
         this.configuration.iceServers = (!!this.configuration.iceServers && this.configuration.iceServers.length > 0) ? this.configuration.iceServers : freeice();
-        this.pc = window.pc = new RTCPeerConnection({ iceServers: this.configuration.iceServers });
+
+        this.pc = new RTCPeerConnection({ iceServers: this.configuration.iceServers });
+
+        if(_this.configuration.mode === 'sendonly') {
+            console.log("Exposing PeerConnection in window.pc");
+            window.pc = this.pc;
+        } else if (!window.remotePc) {
+            console.log("Exposing first remote PeerConnection in window.remotePc");
+            window.remotePc = [this.pc];
+        } else {
+            console.log("Adding remote PeerConnection in the exposed object window.remotePc");
+            window.remotePc.push(this.pc);
+        }
         this.id = !!configuration.id ? configuration.id : uuid.v4();
         this.pc.onicecandidate = function (event) {
             var candidate = event.candidate;
