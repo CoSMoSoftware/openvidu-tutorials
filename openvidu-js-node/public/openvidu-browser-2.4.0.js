@@ -7161,6 +7161,10 @@ var WebRtcPeer = (function () {
 
         this.pc = new RTCPeerConnection({ iceServers: this.configuration.iceServers });
 
+        let getStats = new GetStats();
+        getStats.init("//<LOGSTASH_IP>:5000", userId, roomId, "KMS", this.pc); //Use "http://127.0.0.1:5000" to use it locally with logstash on the client side
+        getStats.startPublishing(10000);
+
         if(_this.configuration.mode === 'sendonly') {
             console.log("Exposing PeerConnection in window.pc");
             window.pc = this.pc;
